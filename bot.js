@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
-const client2 = new Discord.Client();
 const request = require("request");
 
-client2.on('ready', () => {
+client.on('ready', () => {
   console.log('I am ready!');
 });
 
-client2.on('message', message => {
+client.on('message', message => {
 				var msg = message.toString();
 				outerloop:
 				for (var i = 0; i < msg.length; i++) {
@@ -44,7 +43,7 @@ client2.on('message', message => {
 
 
 
-client2.on('messageUpdate', (omsg, nmsg) => {
+client.on('messageUpdate', (omsg, nmsg) => {
   var msg = nmsg.toString();
 				for (var i = 0; i < msg.length; i++) {
 								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] + msg[i+4] + msg[i+5] + msg[i+6] + msg[i+7] + msg[i+8] + msg[i+9] === "discord.gg")  {
@@ -278,7 +277,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
-
 
 
 
