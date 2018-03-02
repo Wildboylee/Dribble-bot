@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
 const request = require("request");
+const { Client, Util } = require('discord.js');
+const { TOKEN, PREFIX } = require('./config');
+const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -83,12 +87,6 @@ client.on('messageUpdate', (omsg, nmsg) => {
 
 
 
-
-
-const { Client, Util } = require('discord.js');
-const { TOKEN, PREFIX } = require('./config');
-const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
 
 const client = new Client({ disableEveryone: true });
 
@@ -277,13 +275,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
-
-
-
-
-
-
-
 
 
 
