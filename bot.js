@@ -109,7 +109,7 @@ client2.on('reconnecting', () => console.log('I am reconnecting now!'));
 
 client2.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-	if (!msg.content.startsWith(process.env.PREFIX)) return undefined;
+	if (!msg.content.startsWith(";")) return undefined;
 
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
@@ -117,7 +117,7 @@ client2.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(' ')[0];
-	command = command.slice(process.env.PREFIX.length)
+	command = command.slice(1);
 
 	if (command === 'play') {
 		const voiceChannel = msg.member.voiceChannel;
