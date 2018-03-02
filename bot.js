@@ -1,13 +1,12 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client2 = new Discord.Client();
 const request = require("request");
 
-client.on('ready', () => {
+client2.on('ready', () => {
   console.log('I am ready!');
 });
 
-
-client.on('message', message => {
+client2.on('message', message => {
 				var msg = message.toString();
 				outerloop:
 				for (var i = 0; i < msg.length; i++) {
@@ -45,7 +44,7 @@ client.on('message', message => {
 
 
 
-client.on('messageUpdate', (omsg, nmsg) => {
+client2.on('messageUpdate', (omsg, nmsg) => {
   var msg = nmsg.toString();
 				for (var i = 0; i < msg.length; i++) {
 								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] + msg[i+4] + msg[i+5] + msg[i+6] + msg[i+7] + msg[i+8] + msg[i+9] === "discord.gg")  {
@@ -88,28 +87,29 @@ client.on('messageUpdate', (omsg, nmsg) => {
 
 
 const { Client, Util } = require('discord.js');
+const { TOKEN, PREFIX } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
-const client2 = new Client({ disableEveryone: true });
+const client = new Client({ disableEveryone: true });
 
 const youtube = new YouTube(process.env.GOOGLE_API_KEY);
 
 const queue = new Map();
 
-client2.on('warn', console.warn);
+client.on('warn', console.warn);
 
-client2.on('error', console.error);
+client.on('error', console.error);
 
-client2.on('ready', () => console.log('Yo this ready!'));
+client.on('ready', () => console.log('Yo this ready!'));
 
-client2.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
+client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
-client2.on('reconnecting', () => console.log('I am reconnecting now!'));
+client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-client2.on('message', async msg => { // eslint-disable-line
+client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-	if (!msg.content.startsWith(";")) return undefined;
+	if (!msg.content.startsWith(PREFIX)) return undefined;
 
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
@@ -117,12 +117,12 @@ client2.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(' ')[0];
-	command = command.slice(1);
+	command = command.slice(PREFIX.length)
 
 	if (command === 'play') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
-		const permissions = voiceChannel.permissionsFor(msg.client2.user);
+		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
 		}
@@ -278,6 +278,7 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
+
 
 
 
