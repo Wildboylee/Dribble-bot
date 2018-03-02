@@ -5,6 +5,12 @@ const { TOKEN, PREFIX } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
+const client = new Client({ disableEveryone: true });
+
+const youtube = new YouTube(process.env.GOOGLE_API_KEY);
+
+const queue = new Map();
+
 client.on('ready', () => {
   console.log('I am ready!');
 });
@@ -88,11 +94,6 @@ client.on('messageUpdate', (omsg, nmsg) => {
 
 
 
-const client = new Client({ disableEveryone: true });
-
-const youtube = new YouTube(process.env.GOOGLE_API_KEY);
-
-const queue = new Map();
 
 client.on('warn', console.warn);
 
@@ -275,7 +276,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
-
 
 
 client.login(process.env.BOT_TOKEN);
