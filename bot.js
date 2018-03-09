@@ -269,7 +269,7 @@ function play(guild, song) {
 			play(guild, serverQueue.songs[0]);
 		})
 		.on('error', error => console.error(error));
-	dispatcher.setVolumeLogarithmic(serverQueue.volume / 1);
+	dispatcher.setVolumeLogarithmic(serverQueue.volume / 10);
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
