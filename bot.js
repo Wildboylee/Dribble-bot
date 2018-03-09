@@ -210,6 +210,10 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 			return msg.channel.send('▶ Resumed the music for you!');
 		}
 		return msg.channel.send('There is nothing playing.');
+	} else if (command === 'help') {
+		return msg.channel.send(```test\n test```);
+		
+		
 	}
 
 	return undefined;
