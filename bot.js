@@ -210,7 +210,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		
 		
 	} else if (command === 'dirtymale') {
-		var randommsg = pickRandom(['test1', 'test2', 'test3', 'test4', 'test5', 'test6'], {count: 2});
+		var randommsg = pickRandom(['I am going to tie you up to a bed and ride you harder than you have ever been ridden.', 'I will suck your dick so hard you will cum within seconds and jizz all over my face.', 'I want you to bend down and touch your toes so I can insert my large black strapon into your ass and make you feel how I feel.', 'Man idk, I was bored', 'Man idk, I was bored', 'Man idk, I was bored'], {count: 1});
 		return msg.channel.send(randommsg);
 	}
 
