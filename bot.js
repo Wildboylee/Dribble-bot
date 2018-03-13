@@ -11,6 +11,8 @@ const youtube = new YouTube(process.env.GOOGLE_API_KEY);
 
 const queue = new Map();
 
+		const pickRandom = require('pick-random');
+
 client.on('ready', () => {
   console.log('I am ready!');
 });
@@ -207,6 +209,9 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		return msg.channel.send('```\ntest1\ntest2\ntest3```');
 		
 		
+	} else if (command === 'dirtymale') {
+		var randommsg = pickRandom(['test1', 'test2', 'test3', 'test4', 'test5', 'test6'], {count: 2});
+		return msg.channel.send(randommsg);
 	}
 
 	return undefined;
