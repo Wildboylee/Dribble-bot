@@ -12,6 +12,7 @@
     "fs": "0.0.1-security",
     "node-opus": "^0.2.1",
     "opusscript": "0.0.6",
+    "pick-random": "2.0.0",
     "request": "^2.83.0",
     "simple-youtube-api": "^5.0.1",
     "ytdl-core": "github:fent/node-ytdl-core#master"
