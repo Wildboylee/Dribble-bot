@@ -214,6 +214,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		return msg.channel.send(randommsg);
 	} else if (command === 'pun') {
 		var randonmsg = pickRandom(['🐿Are you a squirrel, cause you should suck my nuts.🌰'], {count: 1});
+		return msg.channel.send(randommsg);
 	}
 	
 
