@@ -213,7 +213,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		var randommsg = pickRandom(['I am going to tie you up to a bed and ride you harder than you have ever been ridden.', 'I will suck your dick so hard you will cum within seconds and jizz all over my face.', 'I want you to bend down and touch your toes so I can insert my large black strapon into your ass and make you feel how I feel.'], {count: 1});
 		return msg.channel.send(randommsg);
 	} else if (command === 'pun') {
-		var randonmsg = pickRandom(['🐿Are you a squirrel, cause you should suck my nuts.🌰'], {count: 1});
+		var randonmsg = pickRandom(['🐿Are you a squirrel, cause you should suck my nuts.🌰' , ' '], {count: 1});
 		return msg.channel.send(randommsg);
 	}
 	
