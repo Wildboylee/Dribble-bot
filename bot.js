@@ -133,7 +133,7 @@ client.on('message', async msg => { // eslint-disable-line
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "<a:PepoDance:448215372768870412> Information <a:PepoDance:448215372768870412>", //https://steamcommunity.com/sharedfiles/filedetails/?id=1387294537
+    title: "<a:thinkloading:454774003618545698> Information <a:thinkloading:454774003618545698>", //https://steamcommunity.com/sharedfiles/filedetails/?id=1387294537
     description: "This bot was created by Dribble(Dribblinq)#9842\nIt was made mostly as a project to test different settings and commands. But is used mainly in the GTA V Rainmakers discord"
   }
 });
