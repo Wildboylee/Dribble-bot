@@ -117,6 +117,29 @@ client.on('message', async msg => { // eslint-disable-line
 
 	let command = msg.content.toLowerCase().split(' ')[0];
 	command = command.slice(PREFIX.length)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	if(command === "info") {
+    message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "<a:PepoDance:448215372768870412> Information <a:PepoDance:448215372768870412>", //https://steamcommunity.com/sharedfiles/filedetails/?id=1387294537
+    description: "This bot was created by Dribble(Dribblinq)#9842\nIt was made mostly as a project to test different settings and commands. But is used mainly in the GTA V Rainmakers discord"
+  }
+});
+  }
+	
+	
 
 	if (command === 'play') {
 		const voiceChannel = msg.member.voiceChannel;
