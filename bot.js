@@ -127,7 +127,7 @@ client.on('message', async msg => { // eslint-disable-line
 	
 	
 	if(command === "info") {
-    message.channel.send({embed: {
+    msg.channel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
