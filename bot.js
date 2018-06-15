@@ -139,7 +139,7 @@ client.on('message', async msg => { // eslint-disable-line
 });
   }
 	if(command === "test") {
-    msg.channel.send(msg.member.joinedTimestamp);
+    msg.channel.send(msg.member.joinedTimestamp - (new Date()).getTime() / 1000);
 	}
 	
 	
