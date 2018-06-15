@@ -141,8 +141,8 @@ client.on('message', async msg => { // eslint-disable-line
 	if(command === "test") {
 		var yesterday = Math.round((new Date()).getTime() / 1000) - 86400;
 		msg.channel.send("Current time: " + Math.round((new Date()).getTime() / 1000));
-    msg.channel.send("You joined " + (msg.member.joinedTimestamp - Math.round((new Date()).getTime() / 1000)) + " seconds ago");
-		if (yesterday <= msg.member.joinedTimestamp) {
+    msg.channel.send("You joined " + ((msg.member.joinedTimestamp / 1000) - Math.round((new Date()).getTime() / 1000)) + " seconds ago");
+		if (yesterday >= msg.member.joinedTimestamp) {
 			msg.channel.send("You joined less than 24 hours ago");
 		} else {
 			msg.channel.send("You joined more than 24 hours ago");
