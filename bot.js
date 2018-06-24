@@ -87,6 +87,12 @@ client.on('messageUpdate', (omsg, nmsg) => {
 												nmsg.delete();
 												break;
 								}
+								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] === "drop")  {
+												console.log(msg + " Deleted!");
+												message.author.sendMessage("Please dont talk about hacking and other services like that in the public chat, we dont offer those services.");
+												message.delete();
+												break;
+								}
 }
 });
 
