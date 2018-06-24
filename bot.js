@@ -44,6 +44,12 @@ client.on('message', message => {
 												message.delete();
 												break;
 								}
+								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] === "drop")  {
+												console.log(msg + " Deleted!");
+												message.author.sendMessage("Please dont talk about money dropping, hacking, etc.. In the public chat, we dont offer those services.");
+												message.delete();
+												break;
+								}
 								
 								
 								
