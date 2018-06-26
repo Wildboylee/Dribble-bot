@@ -150,15 +150,9 @@ client.on('message', async msg => { // eslint-disable-line
   }
 });
   }
-	if(command === "test") {
-		var yesterday = Math.round((new Date()).getTime() / 1000) - 86400;
-		msg.channel.send("Current time: " + Math.round((new Date()).getTime() / 1000));
-    msg.channel.send("You joined " + (Math.round((new Date()).getTime() - msg.member.joinedTimestamp) / 1000) + " seconds ago");
-		if (yesterday <= msg.member.joinedTimestamp) {
-			msg.channel.send("You joined less than 24 hours ago");
-		} else {
-			msg.channel.send("You joined more than 24 hours ago");
-		}
+	if(command === "lockdown") {
+		if (msg.author.id !== '191997658028572673') return;
+		msg.reply("Test");
 	}
 	
 	
