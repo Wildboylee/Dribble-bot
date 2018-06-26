@@ -151,7 +151,7 @@ client.on('message', async msg => { // eslint-disable-line
 });
   }
 	if(command === "lockdown") {
-		if (msg.author.id !== '191997658028572673' || msg.member.roles.some(r=>["Owners", "Retired Owner", "Admin"].includes(r.name)) ) return;
+		if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["Owners", "Retired Owner", "Admin"].includes(r.name)) ) return;
 		msg.reply("has initiated a lockdown!(not really, this is a test)");
 		let role = message.guild.roles.find("name", "Muted");
 		if (msg.member.roles.has('457281418293411882')) {
