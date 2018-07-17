@@ -163,7 +163,7 @@ client.on('message', async msg => { // eslint-disable-line
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
     if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["Owners", "Retired Owner", "Admin"].includes(r.name)) ) return;
-		
+		msg.reply("test");
     // get the delete count, as an actual number.
     const deleteCount = args[1];
     
@@ -176,6 +176,9 @@ client.on('message', async msg => { // eslint-disable-line
     msg.channel.bulkDelete(fetched)
       .catch(error => msg.reply(`Couldn't delete messages because of: ${error}`));
   }
+	if (command === 'fuckyou') {
+		msg.reply("https://giphy.com/gifs/middle-finger-mister-rogers-fred-44Eq3Ab5LPYn6 https://giphy.com/gifs/QGzPdYCcBbbZm https://giphy.com/gifs/fuck-you-middle-finger-ryan-stiles-x1kS7NRIcIigU https://giphy.com/gifs/reaction-NBN2nFCVQDCDe https://giphy.com/gifs/angry-fuck-you-middle-finger-mpdNxvbxee5yw https://giphy.com/gifs/cheezburger-olympics-U7P2vnWfPkIQ8 https://giphy.com/gifs/1LnQKc4eh8BP2 https://giphy.com/gifs/l4FGAtDrD316rMw1i https://giphy.com/gifs/middle-finger-martina-hill-10Pj0OFiQieaf6 https://giphy.com/gifs/tkQ8MFJYh0hyM https://giphy.com/gifs/veronica-mars-movie-kirsten-bell-143cE5FtVmKrNC https://giphy.com/gifs/sorry-fuck-you-middle-finger-Ebu8aRL2qxMzK https://giphy.com/gifs/police-13UeVnBP6x05P2 https://giphy.com/gifs/XHr6LfW6SmFa0");
+	}
 	
 
 	if (command === 'play') {
