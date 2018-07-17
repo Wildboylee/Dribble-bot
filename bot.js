@@ -165,7 +165,7 @@ client.on('message', async msg => { // eslint-disable-line
     if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["Owners", "Retired Owner", "Admin"].includes(r.name)) ) return;
 		
     // get the delete count, as an actual number.
-    const deleteCount = args[0];
+    const deleteCount = args[1];
     
     // Ooooh nice, combined conditions. <3
     //if(!deleteCount || deleteCount < 2 || deleteCount > 100)
