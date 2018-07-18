@@ -162,7 +162,7 @@ client.on('message', async msg => { // eslint-disable-line
 	}
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
-    if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["owners", "admin"].includes(r.name)) ) return;
+    if (msg.author.id !== '191997658028572673' || msg.member.roles.some(r=>["owners", "admin"].includes(r.name)) ) return;
 		msg.reply("test");
     // get the delete count, as an actual number.
     const deleteCount = args[1] + 2;
@@ -172,7 +172,7 @@ client.on('message', async msg => { // eslint-disable-line
       //return msg.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await msg.channel.fetchMessages({limit: deleteCount});
+    const fetched = await msg.channel.fetchMessages({limit: deleteCount + 2});
     msg.channel.bulkDelete(fetched)
       .catch(error => msg.reply(`Couldn't delete messages because of: ${error}`));
   }
