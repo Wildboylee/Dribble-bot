@@ -172,7 +172,7 @@ client.on('message', async msg => { // eslint-disable-line
       //return msg.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await msg.channel.fetchMessages({limit: deleteCount + 2});
+    const fetched = await msg.channel.fetchMessages({limit: deleteCount});
     msg.channel.bulkDelete(fetched)
       .catch(error => msg.reply(`Couldn't delete messages because of: ${error}`));
   }
