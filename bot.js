@@ -162,10 +162,10 @@ client.on('message', async msg => { // eslint-disable-line
 	}
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
-    if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["Owners", "Retired Owner", "Admin"].includes(r.name)) ) return;
+    if (msg.author.id !== '191997658028572673' || !msg.member.roles.some(r=>["owners", "admin"].includes(r.name)) ) return;
 		msg.reply("test");
     // get the delete count, as an actual number.
-    const deleteCount = args[1];
+    const deleteCount = args[1] + 2;
     
     // Ooooh nice, combined conditions. <3
     //if(!deleteCount || deleteCount < 2 || deleteCount > 100)
