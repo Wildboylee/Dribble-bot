@@ -166,6 +166,7 @@ client.on('message', async msg => { // eslint-disable-line
 		msg.reply("test");
     // get the delete count, as an actual number.
     const deleteCount = args[1] + 2;
+		msg.reply("nibba, idk" + deleteCount);
     
     // Ooooh nice, combined conditions. <3
     //if(!deleteCount || deleteCount < 2 || deleteCount > 100)
