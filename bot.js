@@ -32,12 +32,12 @@ client.on('message', message => {
 												message.delete();
 												break;
 								}
-								if (msg[i] + msg[i+1] + msg[i+2] === "gg/")  {
-												console.log(msg + " Deleted!");
-												message.reply("don\'t advertise!");
-												message.delete();
-												break;
-								}
+								//if (msg[i] + msg[i+1] + msg[i+2] === "gg/")  {
+								//				console.log(msg + " Deleted!");
+								//				message.reply("don\'t advertise!");
+								//				message.delete();
+								//				break;
+								//}
 								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] + msg[i+4] + msg[i+5] + msg[i+6] === "/invite")  {
 												console.log(msg + " Deleted!");
 												message.reply("don\'t advertise!");
@@ -75,12 +75,12 @@ client.on('messageUpdate', (omsg, nmsg) => {
 												nmsg.delete();
 												break;
 								}
-								if (msg[i] + msg[i+1] + msg[i+2] === "gg/")  {
-												console.log(msg + " Deleted!");
-												nmsg.reply("don\'t advertise!");
-												nmsg.delete();
-												break;
-								}
+								//if (msg[i] + msg[i+1] + msg[i+2] === "gg/")  {
+								//				console.log(msg + " Deleted!");
+								//				nmsg.reply("don\'t advertise!");
+								//				nmsg.delete();
+								//				break;
+								//}
 								if (msg[i] + msg[i+1] + msg[i+2] + msg[i+3] + msg[i+4] + msg[i+5] + msg[i+6] === "/invite")  {
 												console.log(msg + " Deleted!");
 												nmsg.reply("don\'t advertise!");
